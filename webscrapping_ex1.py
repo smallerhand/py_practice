@@ -31,4 +31,3 @@ print('총 '+str(x)+'개 저장하였습니다.')
 b=len(os.listdir('desktop/python/'+word))
 print('디렉토리에 '+str(b-a)+'개 사진 추가됨. ('+str(x-b+a)+'개 사진은 중복)')
 print('사진 저장 완료')    
- 
