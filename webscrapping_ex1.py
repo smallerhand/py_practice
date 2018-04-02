@@ -1,33 +1,33 @@
-#ÇÑ°Ü·¹¿¡¼­ ¹®ÀçÀÎ ÀÌ¹ÌÁö ´Ù¿î·Îµå
+#í•œê²¨ë ˆì—ì„œ ë¬¸ì¬ì¸ ì´ë¯¸ì§€ ë‹¤ìš´ë¡œë“œ
 import os
 from os.path import exists
 from bs4 import BeautifulSoup as bs
 import urllib.request as req
-#»çÁø ÀúÀåÇÒ µğ·ºÅä¸® ÀÖ´ÂÁö È®ÀÎ, ¾øÀ¸¸é »ı¼º
-word=input('ÀúÀåÇÒ µğ·ºÅä¸® ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä :')
+#ì‚¬ì§„ ì €ì¥í•  ë””ë ‰í† ë¦¬ ìˆëŠ”ì§€ í™•ì¸, ì—†ìœ¼ë©´ ìƒì„±
+word=input('ì €ì¥í•  ë””ë ‰í† ë¦¬ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” :')
 if not exists('desktop/python/'+word):
     os.mkdir('desktop/python/'+word)
-    print('[%s]µğ·ºÅä¸®¸¦ »ı¼ºÇß½À´Ï´Ù.'%word)
+    print('[%s]ë””ë ‰í† ë¦¬ë¥¼ ìƒì„±í–ˆìŠµë‹ˆë‹¤.'%word)
 else:
-    print('[%s]µğ·ºÅä¸®¿¡ ÀúÀåÇÕ´Ï´Ù.'%word)
-#ÇØ´ç µğ·ºÅä¸®¿¡ ¸î°³ÀÇ ÆÄÀÏ ÀÖ´ÂÁö aº¯¼ö¿¡ ´ã¾ÆµÒ.
+    print('[%s]ë””ë ‰í† ë¦¬ì— ì €ì¥í•©ë‹ˆë‹¤.'%word)
+#í•´ë‹¹ ë””ë ‰í† ë¦¬ì— ëª‡ê°œì˜ íŒŒì¼ ìˆëŠ”ì§€ aë³€ìˆ˜ì— ë‹´ì•„ë‘ .
 a=len(os.listdir('desktop/python/'+word))
 x=0
 for i in range(10):
-url="http://search.hani.co.kr/Search?command=query&keyword=%EB%AC%B8%EC%9E%AC%EC%9D%B8&media=multimedia&sort=d&period=all&datefrom=2000.01.01&dateto=2018.03.31&pageseq="+str(i)
+    url="http://search.hani.co.kr/Search?command=query&keyword=%EB%AC%B8%EC%9E%AC%EC%9D%B8&media=multimedia&sort=d&period=all&datefrom=2000.01.01&dateto=2018.03.31&pageseq="+str(i)
     res=req.urlopen(url)
     soup=bs(res,"html.parser")
     lst=soup.select("#contents > div.search-result-section > ul > li > p.photo > a > img")
-#»çÁø ÀúÀåÇÏ¸é¼­ ÇÏ³ª ÀúÀåÇÒ ¶§¸¶´Ù xº¯¼ö¿¡ 1¾¿ Áõ°¡½ÃÅ´.
+#ì‚¬ì§„ ì €ì¥í•˜ë©´ì„œ í•˜ë‚˜ ì €ì¥í•  ë•Œë§ˆë‹¤ xë³€ìˆ˜ì— 1ì”© ì¦ê°€ì‹œí‚´.
     for j in lst:
         with open('desktop/python/'+word+'/'+j.attrs['src'].split('/')[-1],'wb') as w:
             imgfile=req.urlopen(j.attrs['src'].replace('/120/120/','/1000/1000/')).read()
             w.write(imgfile)
             x+=1
         if x%10==0:
-            print(str(x)+'°³ ÀúÀåÇÏ¿´½À´Ï´Ù')
-#ÃÑ ¸îÀå ÀúÀåÇß´ÂÁö ÇÁ¸°Æ®ÇÏ¸é¼­ ÀÛ¾÷ Á¾·á.(Áßº¹µÈ »çÁøÀÌ ¸îÀåÀÎÁö, ÃÖÁ¾ÀûÀ¸·Î ¸îÀå ÀúÀåÇß´ÂÁöµµ Ãâ·Â)
-print('ÃÑ '+str(x)+'°³ ÀúÀåÇÏ¿´½À´Ï´Ù.')
+            print(str(x)+'ê°œ ì €ì¥í•˜ì˜€ìŠµë‹ˆë‹¤')
+#ì´ ëª‡ì¥ ì €ì¥í–ˆëŠ”ì§€ í”„ë¦°íŠ¸í•˜ë©´ì„œ ì‘ì—… ì¢…ë£Œ.(ì¤‘ë³µëœ ì‚¬ì§„ì´ ëª‡ì¥ì¸ì§€, ìµœì¢…ì ìœ¼ë¡œ ëª‡ì¥ ì €ì¥í–ˆëŠ”ì§€ë„ ì¶œë ¥)
+print('ì´ '+str(x)+'ê°œ ì €ì¥í•˜ì˜€ìŠµë‹ˆë‹¤.')
 b=len(os.listdir('desktop/python/'+word))
-print('µğ·ºÅä¸®¿¡ '+str(b-a)+'°³ »çÁø Ãß°¡µÊ. ('+str(x-b+a)+'°³ »çÁøÀº Áßº¹)')
-print('»çÁø ÀúÀå ¿Ï·á')    
+print('ë””ë ‰í† ë¦¬ì— '+str(b-a)+'ê°œ ì‚¬ì§„ ì¶”ê°€ë¨. ('+str(x-b+a)+'ê°œ ì‚¬ì§„ì€ ì¤‘ë³µ)')
+print('ì‚¬ì§„ ì €ì¥ ì™„ë£Œ')    
