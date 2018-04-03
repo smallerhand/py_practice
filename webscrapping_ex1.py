@@ -1,4 +1,4 @@
-#한겨레에서 문재인 이미지 다운로드
+#한겨레에서 문재인 이미지 다운로드(download images from Hangyeore website)
 import os
 from os.path import exists
 from bs4 import BeautifulSoup as bs
