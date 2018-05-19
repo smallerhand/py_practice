@@ -9,3 +9,10 @@ file1pd.columns.values
 #array(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 
 #'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'], dtype=object)
 
+for i in range(12):
+    print(file1pd.iloc[:,i].describe())
+
+
+
+
+    
