@@ -6,7 +6,7 @@ python coding practice
 <br>
 2. web scrapping
 <br>
-3. ect.
+3. etc.
 
 </p>
 
