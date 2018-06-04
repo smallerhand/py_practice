@@ -1,4 +1,5 @@
-## python1
-<p> simple coding such as web scrapping, game, machine learning and so on, and so forth... </p>
+## Python practice
+<p>
+python coding practice
+</p>
 
-### ^ 0 ^ 
