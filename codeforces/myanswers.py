@@ -502,4 +502,15 @@ while len(set([i for i in str(y2)])) < 4:
     y2 += 1
 print(y2)
 
+#337A. Puzzles (run time error) 내가 돌릴 땐 빨리 잘 돌아가므로 이유를 모르겠음.
+n, m = map(int, input().split(' '))
+f = input().split(' ')
+lst = [int(i) for i in f]
+sorted_lst = sorted(lst)
+difference = []
+for i in range(len(sorted_lst)-n):
+    difference.append(sorted_lst[i+n-1] - sorted_lst[i])
+print(min(difference))
+
+#
 
