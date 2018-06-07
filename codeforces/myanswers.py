@@ -532,3 +532,7 @@ for i in range(n-1):
         l = 1
 
 print(maxs)
+
+#842B. Gleb And Pizza http://codeforces.com/problemset/problem/842/B
+
+
