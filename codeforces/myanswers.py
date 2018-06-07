@@ -502,15 +502,33 @@ while len(set([i for i in str(y2)])) < 4:
     y2 += 1
 print(y2)
 
-#337A. Puzzles (run time error) 내가 돌릴 땐 빨리 잘 돌아가므로 이유를 모르겠음.
+#337A. Puzzles
 n, m = map(int, input().split(' '))
 f = input().split(' ')
 lst = [int(i) for i in f]
 sorted_lst = sorted(lst)
-difference = []
-for i in range(len(sorted_lst)-n):
-    difference.append(sorted_lst[i+n-1] - sorted_lst[i])
-print(min(difference))
+mins = sorted_lst[n-1] - sorted_lst[0]
+for i in range(1, m-n+1):
+    data = sorted_lst[i+n-1] - sorted_lst[i]
+    if data < mins:
+        mins = data
+print(mins)
 
-#
+#580A. Kefa and First Steps
+n = int(input())
+a = input().split(' ')
+lst = [int(i) for i in a]
+l = 1
+maxs = 1
+for i in range(n-1):
+    if lst[i] <= lst[i+1]:
+        l += 1
+        if i == n-2:
+            if maxs < l:
+                maxs = l
+    else:
+        if maxs < l:
+            maxs = l
+        l = 1
 
+print(maxs)
