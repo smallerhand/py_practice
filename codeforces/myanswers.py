@@ -534,5 +534,21 @@ for i in range(n-1):
 print(maxs)
 
 #842B. Gleb And Pizza http://codeforces.com/problemset/problem/842/B
+r, d=map(int, input().split(' '))
+n = int(input())
+output = 0
+for i in range(n):
+    x, y, r1 = map(int, input().split(' '))
+    if ((x**2 + y**2)**.5+r1)<=r and ((x**2 + y**2)**.5-r1)>=r-d:
+        output += 1
+
+print(output)
+
+#732C. Sanatorium http://codeforces.com/problemset/problem/732/C
+b, d, s = map(int, input().split(' '))
+
+
+
+print(output)
 
 
