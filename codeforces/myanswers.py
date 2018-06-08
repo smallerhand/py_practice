@@ -545,10 +545,45 @@ for i in range(n):
 print(output)
 
 #732C. Sanatorium http://codeforces.com/problemset/problem/732/C
+#wrong answer on test4
 b, d, s = map(int, input().split(' '))
-
-
-
+mins = b
+for i in [d, s]:
+    if i < mins:
+        mins = i
+b -= mins
+d -= mins
+s -= mins
+output = 0
+if b == 0:
+    if d == 0:
+        if s == 0:
+            output = 0
+        else:
+            output = (s-1)*2
+    elif s == 0:
+        output = (d-1)*2
+    else:
+        if d < s:
+            if 2*s-d-2 > 0:
+                output = 2*s-d-2
+        elif 2*d-s-2>0:
+            output = 2*d-s-2
+elif d == 0:
+    if s == 0:
+        output = (b-1)*2
+    else:
+        if b < s:
+            if 2*s-b-2 > 0:
+                output = 2*s-b-2
+        elif 2*b-s-2 > 0:
+                output = 2*b-s-2
+elif b < d:
+    if 2*d-b-2 > 0:
+        output = 2*d-b-2
+elif 2*b-d-2 > 0:
+    output = 2*b-d-2
+    
 print(output)
 
 
