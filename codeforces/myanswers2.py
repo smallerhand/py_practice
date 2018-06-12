@@ -113,27 +113,28 @@ for i in range(n):
     x.append(xi)
     v.append(vi)
 output = 0
+
 for i in range(n-1):
-    for j in range(n-2):
-        if x[i] * x[j+i+1] > 0:
-            if v[i] * v[j+i+1] > 0:
+    for j in range(i+1, n):
+        if x[i] * x[j] > 0:
+            if v[i] * v[j] > 0:
                 output += 1
             else:
-                if abs(v[i]) < w and abs(v[j+i+1]) < w:
+                if abs(v[i]) < w and abs(v[j]) < w:
                     output += 1
-        elif x[i] * x[j+i+1] < 0:
-            if v[i] * v[j+i+1] < 0:
+        elif x[i] * x[j] < 0:
+            if v[i] * v[j] < 0:
                 output += 1
             else:
-                if abs(v[i]) < w and abs(v[j+i+1]) < w:
+                if abs(v[i]) < w and abs(v[j]) < w:
                     output += 1
         elif x[i] == 0:
             if abs(v[i]) < w:
-                (v[j+i+1] - x[i])*x[j+i+1] < 0:
+                if (v[j] - x[i])*x[j] < 0:
                     output += 1
-        elif x[j+i+1] == 0:
-            if abs(v[j+i+1]) < w:
-                (v[i] - x[j+i+1])*x[i] < 0:
+        elif x[j] == 0:
+            if abs(v[j]) < w:
+                if (v[i] - x[j])*x[i] < 0:
                     output += 1
                     
 print(output)
