@@ -104,7 +104,7 @@ output[1] = ''
 for i in range(x):
     print(output[i])
     
-#D. 
+#D. (error)
 n, l, w = map(int, input().split(' '))
 x = []
 v = []

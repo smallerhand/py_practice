@@ -586,4 +586,17 @@ elif 2*b-d-2 > 0:
     
 print(output)
 
+#479A. Expression
+a = int(input())
+b = int(input())
+c = int(input())
+output = a
+for i in [b,c]:
+    output = max(output * i, output + i)
+if (b+c)*a > output:
+    output = (b+c)*a
+if b*c+a > output:
+    output = b*c+a
+print(output)
+
 
