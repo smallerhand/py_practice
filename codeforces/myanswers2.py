@@ -139,5 +139,45 @@ for i in range(n-1):
                     
 print(output)
 
+#510B. Fox And Two Dots (보류)
+n, m = map(int, input().split(' '))
+matrix = [['' for col in range(m)] for row in range(n)]
+dic = dict()
+for i in range(n):
+    lst = input()
+    for j in range(m):
+        matrix[i][j] = lst[j]
+        if lst[j] in dic.keys():
+            dic[lst[j]].append((i,j))
+        else:
+            dic[lst[j]] = [(i,j)]
+            
+output = 'No'        
+
+for factor in dic.keys():
+    if len(dic[factor]) >= 4:
+        for i in range(n):
+            lst = []
+            for k in dic[factor]:
+                if k[0] == i:
+                    lst.append(k[1])
+            start = min(lst)
+            end = max(lst)
+            print(start, end)
+        for j in range(m):
+            lst = []
+            for l in dic[factor]:
+                if l[1] == j:
+                    lst.append(l[0])
+            start = min(lst)
+            end = max(lst)
+            print(start, end)
+
+cnt = 1
+
+if cnt >= 4:
+    output = 'Yes'
+    
+print(output)
 
 
