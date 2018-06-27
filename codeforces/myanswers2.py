@@ -180,4 +180,21 @@ if cnt >= 4:
     
 print(output)
 
+#339B. Xenia and Ringroad
+n, m = map(int, input().split(' '))
+alist = input().split(' ')
+alist = [int(i) for i in alist]
+
+time = 0
+
+for i in range(m):
+    if i == m-1:
+        time += alist[i] - 1
+    elif alist[i] > alist[i+1]:
+        time += n
+    else:
+        continue
+    
+print(time)
+
 
