@@ -197,4 +197,9 @@ for i in range(m):
     
 print(time)
 
+#492B. Vanya and Lanterns
+
+
+
+
 
