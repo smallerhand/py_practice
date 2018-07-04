@@ -198,8 +198,80 @@ for i in range(m):
 print(time)
 
 #492B. Vanya and Lanterns
+n, l = map(int, input().split(' '))
+alist = input().split(' ')
+a = [int(i) for i in alist]
 
+a.sort()
+if a[0] != 0:
+    max = a[0]*2
+else:
+    max = 0
 
+if a[-1] != l:
+    if max < (l - a[-1])*2:
+        max = (l - a[-1])*2
 
+for i in range(n-1):
+    if max < a[i+1] - a[i]:
+        max = a[i+1] - a[i]
+
+d = max/2
+print("{0:.10f}".format(d))
+
+#200B. Drinks
+n = int(input())
+line = input().split(' ')
+p = [int(i) for i in line]
+
+print(sum(p)/n)
+
+#4C. Registration system
+n = int(input())
+line = ['' for i in range(n)]
+dic = dict()
+for i in range(n):
+    inp = input()
+    if inp in dic.keys():
+        dic[inp] += 1
+        line[i] = inp + str(dic[inp])
+    else:
+        dic[inp] = 0
+        line[i] = inp
+        
+for i in range(n):
+    if line[i].isalpha():
+        print('OK')
+    else:
+        print(line[i])
+
+#230B. T-primes (wrong on test16)
+n = int(input())
+xline = input().split(' ')
+x = [int(i) for i in xline]
+
+for i in range(n):
+    end = False
+    integer = x[i]
+    if integer in [1,2,3,16,36,64]:
+        print('NO')
+    else:
+        root = int(integer**(1/2))
+        root_of_root = int(root**(1/2))
+        if root ** 2 == integer:
+            if root_of_root <= 2:
+                print('YES')
+            else:
+                for j in range(2, root_of_root):
+                    if root%j == 0:
+                        break
+                    elif j == root_of_root-1:
+                        print('YES')
+                        end = True
+                if not end:
+                    print('NO')                
+        else:
+            print('NO')
+                    
 
 
