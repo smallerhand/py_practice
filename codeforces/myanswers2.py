@@ -273,5 +273,40 @@ for i in range(n):
         else:
             print('NO')
                     
+#230B. T-primes (wrong on test16)
+n = int(input())
+xline = input().split(' ')
+x = [int(i) for i in xline]
 
-
+for i in range(n):
+    obj = x[i]
+    end = True
+    if obj == 1:
+        end = False
+    else:
+        root = int(obj**(1/2))
+        if root**2 == obj:
+            root_of_root = int(root**(1/2))
+            if root_of_root**2 == root:
+                for j in range(root_of_root):
+                    if j in [0,1]:
+                        continue
+                    elif root % j == 0:
+                        end = False
+                        break
+            else:
+                for j in range(root_of_root+1):
+                    if j in [0,1]:
+                        continue
+                    elif root % j == 0:
+                        end = False
+                        break
+        else:
+            end = False
+    if end:
+        print('YES')
+    else:
+        print('NO')
+                        
+#489C. Given Length and Sum of Digits... (time limit on test5)
+m, s = map(int, input().split(' '))
