@@ -308,5 +308,30 @@ for i in range(n):
     else:
         print('NO')
                         
-#489C. Given Length and Sum of Digits... (time limit on test5)
+#489C. Given Length and Sum of Digits... (wrong on test29)
 m, s = map(int, input().split(' '))
+
+if m == 1 and s < 10:
+    print(s, s)
+elif m*9 < s or (m>1 and s==0):
+    print(-1, -1)
+else:
+    mok, nam = divmod(s, 9)
+    aida = m - mok - 1
+    if nam == 0 and mok == m:
+        output = '9'*m
+        print(int(output), (output))
+    elif nam == 0:
+        output = '1'+(m-mok-2)*'0'+'8'+(mok-1)*'9'
+        output2 = (mok-1)*'9'+'8'+(m-mok-2)*'0'+'1'
+        print(int(output), int(output2))
+    else:
+        output2 = mok*'9'+str(nam)+aida*'0'
+        if aida > 0:
+            output = '1'+(aida-1)*'0'+str(nam-1)+mok*'9'
+        else:
+            output = str(nam)+mok*'9'
+        print(int(output), int(output2))
+
+#519B. A and B and Compilation Errors
+
