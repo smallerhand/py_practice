@@ -376,4 +376,33 @@ def push(n):
 print(push(n))
 
 #489B. BerSU Ball
+n = int(input())
+aline = input().split(' ')
+m = int(input())
+bline = input().split(' ')
+a = [int(i) for i in aline]
+b = [int(i) for i in bline]
+
+sorted_a = sorted(a)
+sorted_b = sorted(b)
+
+def count_match(sorteda, i, sortedb, count):
+    if (i == len(sorteda)) or (len(sortedb) == 0):
+        return count
+    elif sorteda[i]-1 in sortedb:
+        sortedb.remove(sorteda[i]-1)
+        return count_match(sorteda, i+1, sortedb, count+1)
+    elif sorteda[i] in sortedb:
+        sortedb.remove(sorteda[i])
+        return count_match(sorteda, i+1, sortedb, count+1)
+    elif sorteda[i]+1 in sortedb:
+        sortedb.remove(sorteda[i]+1)
+        return count_match(sorteda, i+1, sortedb, count+1)
+    else:
+        return count_match(sorteda, i+1, sortedb, count)
+
+count = count_match(sorted_a, 0, sorted_b, 0)
+
+print(count)
+
 
