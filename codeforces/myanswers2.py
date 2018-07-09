@@ -363,5 +363,17 @@ for i in dicb.keys():
         print(i)
         break
 
+#268B. Buttons
+n = int(input())
+
+def push(n):
+    output = 0
+    for i in range(n-1):
+        output += (n-i-1)*(i+1)
+    output += n
+    return output
+
+print(push(n))
+
 
 
