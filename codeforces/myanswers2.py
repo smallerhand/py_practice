@@ -405,4 +405,36 @@ count = count_match(sorted_a, 0, sorted_b, 0)
 
 print(count)
 
+#474B. Worms(time limit on test3)
+n = int(input())
+aline = input().split(' ')
+m = int(input())
+qline = input().split(' ')
+a = [int(i) for i in aline]
+q = [int(i) for i in qline]
+sumofa = 0
+acum = [0 for i in range(n)]
+for i in range(n):
+    sumofa += a[i]
+    acum[i] = sumofa
 
+#588A. Duff and Meat
+n = int(input())
+a = [0 for i in range(n)]
+p = [0 for i in range(n)]
+for i in range(n):
+    a[i], p[i] = map(int, input().split(' '))
+
+money = 0
+minp = p[0]
+for i in range(n):
+    if minp <= p[i]:
+        money += a[i]*minp
+    else:
+        minp = p[i]
+        money += a[i]*minp
+        
+print(money)
+
+
+    
