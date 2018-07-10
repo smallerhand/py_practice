@@ -417,6 +417,22 @@ acum = [0 for i in range(n)]
 for i in range(n):
     sumofa += a[i]
     acum[i] = sumofa
+for i in q:
+    M = int(n/2)
+    L = 0
+    H = n-1
+    while True:
+        if i == acum[M]:
+            print(M+1)
+            break
+        elif i < acum[M]:
+            if (M == 0) or (i > acum[M-1]):
+                print(M+1)
+                break
+            else:
+                M -= 1
+        else:
+            M += 1
 
 #588A. Duff and Meat
 n = int(input())
@@ -436,5 +452,3 @@ for i in range(n):
         
 print(money)
 
-
-    
