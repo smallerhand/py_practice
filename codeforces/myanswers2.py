@@ -405,7 +405,7 @@ count = count_match(sorted_a, 0, sorted_b, 0)
 
 print(count)
 
-#474B. Worms(time limit on test3)
+#474B. Worms(time limit on test12)
 n = int(input())
 aline = input().split(' ')
 m = int(input())
@@ -430,9 +430,11 @@ for i in q:
                 print(M+1)
                 break
             else:
-                M -= 1
+                H = M-1
+                M = int((L+H)/2)
         else:
-            M += 1
+            L = M+1
+            M = int((L+H)/2)
 
 #588A. Duff and Meat
 n = int(input())
@@ -451,4 +453,7 @@ for i in range(n):
         money += a[i]*minp
         
 print(money)
+
+
+
 
