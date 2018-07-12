@@ -454,6 +454,24 @@ for i in range(n):
         
 print(money)
 
+#467B. Fedor and New Game
+n, m, k = map(int, input().split(' '))
+타입, 병사수, 타입
+x = [0 for i in range(m+1)]
+for i in range(m+1):
+    x[i] = int(input())
 
+def tobinary(integ):
+    res = ''
+    while True:
+        mok, nam = divmod(integ, 2)
+        res = str(nam) + res
+        integ = mok
+        if mok == 0:
+            break
+    return res
 
+print(tobinary(8), tobinary(5), tobinary(111), tobinary(17))
+
+print(tobinary(1), tobinary(2), tobinary(3), tobinary(4))
 
