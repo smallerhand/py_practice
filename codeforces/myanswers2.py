@@ -454,7 +454,7 @@ for i in range(n):
         
 print(money)
 
-#467B. Fedor and New Game
+#467B. Fedor and New Game(아직 문제파악중)
 n, m, k = map(int, input().split(' '))
 타입, 병사수, 타입
 x = [0 for i in range(m+1)]
