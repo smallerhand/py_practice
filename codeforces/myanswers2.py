@@ -475,3 +475,16 @@ print(tobinary(8), tobinary(5), tobinary(111), tobinary(17))
 
 print(tobinary(1), tobinary(2), tobinary(3), tobinary(4))
 
+#520B. Two Buttons
+n,m=map(int,input().split(' '))
+cnt=0
+while n!=m:
+    cnt+=1
+    if n<m:
+        if m%2==0:
+            m/=2
+        else:
+            m+=1
+    else:
+        m+=1
+print(cnt)
