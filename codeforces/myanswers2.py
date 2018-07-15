@@ -488,3 +488,10 @@ while n!=m:
     else:
         m+=1
 print(cnt)
+
+
+
+
+
+
+
