@@ -498,9 +498,39 @@ for i in range(n):
     q[p[i]-1] = i+1
 res = ''
 for i in range(n-1):
-    res += q[i]+' '
-res += q[-1]
+    res += str(q[i])+' '
+res += str(q[-1])
 print(res)
 
+#230B. T-primes (time limit test 33)
+n = int(input())
+xline = input().split(' ')
+x = [int(i) for i in xline]
 
+class matsuja:
+    def __init__(self, inte):
+        self.integer = inte
+        self.root = int(inte**(1/2))
+    def jegobinya(self):
+        if self.root**2 == self.integer:
+            return True
+        else:
+            return False
+    def sossunya(self):
+        rofr = int(self.root**(1/2))
+        for i in range(rofr+1):
+            if i in [0,1]:
+                continue
+            elif self.root % i == 0:
+                return False
+        return True
 
+for i in x:
+    if i!=1 :
+        A = matsuja(i)
+        if A.jegobinya():
+            if A.sossunya():
+                print('YES')
+                continue
+    print('NO')
+ 
