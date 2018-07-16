@@ -599,4 +599,22 @@ if b*c+a > output:
     output = b*c+a
 print(output)
 
+#148A. Insomnia cure
+k = int(input())
+l = int(input())
+m = int(input())
+n = int(input())
+d = int(input())
+count = 0
+for i in range(d):
+    i1=i+1
+    if i1%k==0 or i1%l==0 or i1%m==0 or i1%n==0:
+        count += 1
+print(count)
+
+
+
+
+
+
 

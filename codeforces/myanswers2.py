@@ -489,9 +489,18 @@ while n!=m:
         m+=1
 print(cnt)
 
-
-
-
+#136A. Presents
+n = int(input())
+pline = input().split(' ')
+p = [int(i) for i in pline]
+q = [0 for i in range(n)]
+for i in range(n):
+    q[p[i]-1] = i+1
+res = ''
+for i in range(n-1):
+    res += q[i]+' '
+res += q[-1]
+print(res)
 
 
 
