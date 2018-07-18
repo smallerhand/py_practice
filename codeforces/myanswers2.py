@@ -560,8 +560,16 @@ for i in word:
         reword += i + ' '
 print(reword[:-1])
 
-
-
-
-
-
+#318A. Even Odds
+n, k = map(int, input().split(' '))
+if n%2==0:
+    if k*2>n:
+        print(k*2-n)
+    else:
+        print(k*2-1)
+else:
+    if k*2-1>n:
+        print(k*2-n-1)
+    else:
+        print(k*2-1)    
+        
