@@ -535,8 +535,21 @@ for i in x:
     print('NO')
 
 #486A. Calculating Function
+n = int(input())
+if n%2==0:
+    print(int(n/2))
+else:
+    print(int((n-1)/2)-n)
 
-
-
-
+#617A. Elephant
+x = int(input())
+if x <= 5:
+    print(1)
+elif x % 5 == 0:
+    print(int(x/5))
+else:
+    print(int(x/5)+1)
  
+#208
+
+
