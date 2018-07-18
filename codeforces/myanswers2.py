@@ -550,6 +550,18 @@ elif x % 5 == 0:
 else:
     print(int(x/5)+1)
  
-#208
+#208A. Dubstep
+word = input().split('WUB')
+reword = ''
+for i in word:
+    if i =='':
+        continue
+    else:
+        reword += i + ' '
+print(reword[:-1])
+
+
+
+
 
 
