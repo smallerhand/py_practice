@@ -573,3 +573,4 @@ else:
     else:
         print(k*2-1)    
         
+#1009A. Game Shopping
