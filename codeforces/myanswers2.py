@@ -533,4 +533,10 @@ for i in x:
                 print('YES')
                 continue
     print('NO')
+
+#486A. Calculating Function
+
+
+
+
  
