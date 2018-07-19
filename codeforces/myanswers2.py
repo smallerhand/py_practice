@@ -573,4 +573,17 @@ else:
     else:
         print(k*2-1)    
         
-#1009A. Game Shopping
+#451A. Game With Sticks(wrong on test14)
+n,m=map(int,input().split(' '))
+if n==1 or m==1:
+    print('Akshat')    
+elif n%2!=0 and m%2!=0:
+    print('Akshat')
+else:
+    print('Malvika')
+
+
+
+
+
+
