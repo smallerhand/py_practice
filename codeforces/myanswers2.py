@@ -606,4 +606,5 @@ for i in c:
             break
 print(cnt)
 
-#1009B. Minimum Ternary String
+
+
