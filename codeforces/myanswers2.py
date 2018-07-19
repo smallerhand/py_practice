@@ -607,7 +607,3 @@ for i in c:
 print(cnt)
 
 #1009B. Minimum Ternary String
-
-
-
-
