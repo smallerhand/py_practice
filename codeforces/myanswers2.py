@@ -582,7 +582,31 @@ elif n%2!=0 and m%2!=0:
 else:
     print('Malvika')
 
+#1009A. Game Shopping
+n,m=map(int, input().split(' '))
+cline=input().split(' ')
+aline=input().split(' ')
+c=[int(i) for i in cline]
+a=[int(i) for i in aline]
+cnt=0
+j=0
+anow=a[j]
+for i in c:
+    if i<=anow:
+        cnt+=1
+        j+=1
+        if j<m:
+            anow=a[j]
+        else:
+            break
+    else:
+        if j<m:
+            anow=a[j]
+        else:
+            break
+print(cnt)
 
+#1009B. Minimum Ternary String
 
 
 
