@@ -7,17 +7,15 @@ whatA = False
 whatB = False
 
 while not (whatA and whatB):
-    rootB = int(B**(1/2))
     whatB = False
-    for i in range(rootB):
+    for i in range(B):
         if i < 2:
             continue
         elif B%i==0:
             whatB = True
             break
-    rootA = int(A**(1/2))
     whatA = False
-    for i in range(rootA):
+    for i in range(A):
         if i < 2:
             continue
         elif A%i==0:
