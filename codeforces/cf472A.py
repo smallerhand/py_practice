@@ -1,40 +1,32 @@
 #다시
 n = int(input())
+A = 4
+B = n-A
+   
+whatA = False
+whatB = False
 
-if n%2==0:
-    A = int(n/2)
-    B = int(n/2)
-else:
-    A = int((n-1)/2)
-    B = int((n+1)/2)
-
-
-br = False
-br2 = False
-
-while True:
-    rootA = int(A**(1/2))
+while not (whatA and whatB):
     rootB = int(B**(1/2))
-    
-    for i in range(rootA):
-        if i < 2:
-            continue
-        elif A%i==0:
-            A -= 1
-            B += 1
-            continue
-        if i == rootA-1:
-            br = True
+    whatB = False
     for i in range(rootB):
         if i < 2:
             continue
         elif B%i==0:
-            A -= 1
-            B += 1
+            whatB = True
+            break
+    rootA = int(A**(1/2))
+    whatA = False
+    for i in range(rootA):
+        if i < 2:
             continue
-        if i == rootB-1:
-            br2 = True
-    if br and br2:
-        break
+        elif A%i==0:
+            whatA = True
+            break
+    if not (whatA and whatB):
+        A += 1
+        B -= 1
+        
         
 print(A, B)
+
