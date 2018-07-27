@@ -1,4 +1,3 @@
-#다시
 n = int(input())
 A = 4
 B = n-A
