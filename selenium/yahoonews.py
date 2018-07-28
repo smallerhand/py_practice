@@ -31,12 +31,13 @@ for item in soup.find_all(attrs={'class': 'ttl'}):
         cnt+=1
 print(cnt)
 
-url = linklist[0]
-res = req.urlopen(url)
-soup = bs(res,"html.parser")
-result = soup.find_all('p', class_='hbody')
-for i in result:
-    print(i.get_text(strip=True))
-
-
-
+for url in linklist[:8]:
+    res = req.urlopen(url)
+    soup = bs(res,"html.parser")
+    result = soup.find_all('p', class_='hbody')
+    print(soup.find('h2', class_='newsTitle').string)
+    for i in result:
+        print(i.get_text(strip=True))
+        print(' ')
+    
+    
