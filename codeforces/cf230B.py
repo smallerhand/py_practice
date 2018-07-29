@@ -1,5 +1,7 @@
 #time limit on test33
 #개선했더니, wrong on test16
+#다시 개선했더니, time limit on test7
+#갈수록 나빠지고 있음.
 
 n = int(input())
 xline = input().split(' ')
@@ -11,33 +13,37 @@ def jegobinya(t):
         return root
     return 0
 
-arr = [1 for i in range(int(max(x)**(1/2))+1)]
+maxroot = int(max(x)**(1/2))+1
+arr = [1 for i in range(maxroot)]
+
+def sossu(array):
+    array[0] = 0
+    leng = len(array)
+    for i in range(3, leng, 2):
+        array[i] = 0
+    for i in range(5, leng, 3):
+        array[i] = 0
+    for i in range(3, leng):
+        if array[i] == 0:
+            continue
+        else:
+            for j in range(2*i-1, leng, i):
+                array[j] = 0
+    return array
+
+arr = sossu(arr)
 
 def sossunya(array, t):
-    if t<=9:
-        for i in range(2, t):
-            if t%i==0:
-                return array, str(False)
-    else:
-        roott = int(t**(1/2))+1
-        for i in range(2, roott):
-            if array[i]==0:
-                continue
-            elif t%i==0:
-                return array, str(False)
-            for j in range(i, t, i):
-                array[j]=0
-    return array, str(True)
-
-res = str(False)
-
+    if array[t-1] == 1:
+        return True
+    return False
+    
 for i in x:
     root = jegobinya(i)
     if i < 3:
         print('NO')
     elif root != 0:
-        arr, res = sossunya(arr, root)
-        if res == str(True):
+        if sossunya(arr, root):
             print('YES')
         else:
             print('NO')
