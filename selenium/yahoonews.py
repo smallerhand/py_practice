@@ -39,5 +39,13 @@ for url in linklist[:8]:
     for i in result:
         print(i.get_text(strip=True))
         print(' ')
-    
-    
+
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
+
+
