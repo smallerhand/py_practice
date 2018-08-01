@@ -51,3 +51,30 @@ for i in x:
         print('NO')
         
 
+#다시 처음부터
+n = int(input())
+xline = input().split(' ')
+x = [int(i) for i in xline]
+
+def jegobinya(t):
+    root = int(t**(1/2))
+    if root**2 == t:
+        return root
+    return 0
+
+jegoblist = [0 for i in range(n)]
+i = 0
+testlist = []
+for xi in x:
+    k = jegobinya(xi)
+    jegoblist[i] = k
+    testlist.append(k)
+    i += 1
+
+maxroot = int(max(testlist)**(1/2))
+
+def makingsossulist(maxroot):
+    sossulist = [2]
+    if maxroot+1 > 4:
+#keep        
+    
